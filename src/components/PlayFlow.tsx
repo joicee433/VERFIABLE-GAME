@@ -20,7 +20,7 @@ async function json<T>(res: Response): Promise<T & { error?: string }> {
 }
 
 function fmtDate(iso: string) {
-  return new Date(iso).toLocaleString(undefined, { dateStyle: "full", timeStyle: "short", timeZoneName: "short" });
+  return new Date(iso).toLocaleString(undefined, { dateStyle: "full", timeStyle: "long" });
 }
 
 export function PlayFlow() {
