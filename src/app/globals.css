@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Instrument Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --color-mist: #edf0fa;
+  --color-ink: #0f1430;
+  --color-cobalt: #2638e6;
+  --color-stamp: #ff5a36;
+  --color-mint: #0f7a56;
+  --color-rule: #c9d0ea;
+  --color-danger: #b3261e;
+}
+
+html { background: var(--color-mist); color: var(--color-ink); }
+body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
+
+:focus-visible { outline: 3px solid var(--color-stamp); outline-offset: 3px; border-radius: 4px; }
+
+@keyframes thunk {
+  0%   { transform: rotate(-22deg) scale(1.7); opacity: 0; }
+  60%  { transform: rotate(-8deg) scale(0.94); opacity: 1; }
+  100% { transform: rotate(-8deg) scale(1); opacity: 1; }
+}
+.seal-in { animation: thunk 520ms cubic-bezier(.2,.8,.2,1) 200ms both; transform: rotate(-8deg); }
+@media (prefers-reduced-motion: reduce) { .seal-in { animation: none; } }
